@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <Label text="Username:"/>
+        <TextField/>
+        <Button mnemonicParsing="false" text="Connect" textAlignment="CENTER"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Label text="Address:">
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Label>
+        <TextField prefHeight="27.0" prefWidth="102.0" promptText="IP address" text="255.255.255.255"/>
+        <Label text=":">
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Label>
+        <TextField prefHeight="27.0" prefWidth="49.0" promptText="Port number" text="65536">
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </TextField>
+    </HBox>
+    <TableView prefHeight="200.0">
+      <columns>
+          <TableColumn prefWidth="75.0" text="Server"/>
+          <TableColumn prefWidth="75.0" text="Space"/>
+          <TableColumn prefWidth="75.0" text="Ping"/>
+      </columns>
+    </TableView>
+</VBox>
