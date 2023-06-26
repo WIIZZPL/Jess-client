@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/main.fxml" afterDir="false" />
+    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Dodatkowe okna plus poprawa main.fxml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/LobbyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/game.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/lobby.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,6 +43,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/WIIZZ/Documents/Repos/Jess-client/src/main/java/com/wiizz/jess/client/jessclient",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -58,6 +54,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\WIIZZ\Documents\Repos\Jess-client\src\main\resources\com\wiizz\jess\client\jessclient" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.wiizz.jess.client.jessclient.Client" />
+      <module name="Jess-client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,6 +77,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Dodatkowe okna plus poprawa main.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodatkowe okna plus poprawa main.fxml" />
   </component>
 </project>

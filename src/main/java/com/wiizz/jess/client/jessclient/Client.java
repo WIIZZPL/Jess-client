@@ -13,6 +13,7 @@ public class Client extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("main.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Jess");
+        stage.setResizable(false);
         //TODO stage.getIcons().add(new Image(""))
         stage.setScene(scene);
         stage.show();
