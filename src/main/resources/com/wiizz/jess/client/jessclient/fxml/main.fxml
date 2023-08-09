@@ -4,16 +4,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wiizz.jess.client.jessclient.MainController">
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wiizz.jess.client.jessclient.controllers.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <BorderPane>
       <left>
-           <TextField prefWidth="158.0" promptText="Username" BorderPane.alignment="CENTER" />
+           <TextField fx:id="usernameInput" prefWidth="158.0" promptText="Username" BorderPane.alignment="CENTER" />
       </left>
       <right>
-           <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Connect" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+           <Button fx:id="connectButton" mnemonicParsing="false" onAction="#connectAction" prefHeight="25.0" prefWidth="67.0" text="Connect" textAlignment="CENTER" BorderPane.alignment="CENTER" />
       </right>
    </BorderPane>
     <HBox alignment="CENTER" spacing="10.0">
@@ -22,19 +22,19 @@
                 <Insets />
             </HBox.margin>
         </Label>
-        <TextField prefHeight="27.0" prefWidth="102.0" promptText="IP address" />
+        <TextField fx:id="ipAddressInput" prefHeight="27.0" prefWidth="102.0" promptText="IP address" />
         <Label text=":">
             <HBox.margin>
                 <Insets />
             </HBox.margin>
         </Label>
-        <TextField prefHeight="27.0" prefWidth="67.0" promptText="Port">
+        <TextField fx:id="portInput" prefHeight="27.0" prefWidth="67.0" promptText="Port">
             <HBox.margin>
                 <Insets />
             </HBox.margin>
         </TextField>
     </HBox>
-    <TableView prefHeight="200.0">
+    <TableView fx:id="serverTable" prefHeight="200.0">
       <columns>
           <TableColumn prefWidth="75.0" text="Server" />
           <TableColumn prefWidth="75.0" text="Space" />

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wiizz.jess.client.jessclient.controllers.LobbyController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <BorderPane>
+        <right>
+          <Button fx:id="createButton" mnemonicParsing="false" onAction="#createTable" text="Create table" BorderPane.alignment="CENTER" />
+        </right>
+        <left>
+          <Label fx:id="serverName" text="Server name" BorderPane.alignment="CENTER" />
+        </left>
+    </BorderPane>
+    <Separator prefWidth="200.0" />
+    <TableView fx:id="gamesTable" prefHeight="200.0" prefWidth="300.0">
+      <columns>
+          <TableColumn prefWidth="150.0" text="User" />
+          <TableColumn prefWidth="75.0" text="Time" />
+          <TableColumn prefWidth="75.0" text="Password" />
+      </columns>
+    </TableView>
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <PasswordField fx:id="passwordInput" promptText="Table password" />
+        <Button fx:id="joinButton" mnemonicParsing="false" onAction="#joinTable" text="Join" />
+    </HBox>
+</VBox>
