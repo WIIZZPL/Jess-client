@@ -6,13 +6,30 @@ import java.util.LinkedList;
 
 public class Chessboard {
     Pane checkerboard;
-    LinkedList<ChessPiece> pieces = new LinkedList<>();
-    public Chessboard(Pane checkerboard){
-        this.checkerboard = checkerboard;
-        new Pawn(5, 0, true, checkerboard, pieces);
+    static boolean isWhiteMove = true;
+
+    static public boolean isWhiteMove() {
+        return isWhiteMove;
     }
 
-    public ChessPiece getPieceAt(int row, int column){
+    static public void moveToggle(){
+        isWhiteMove = !isWhiteMove;
+    }
+
+    static LinkedList<ChessPiece> pieces = new LinkedList<>();
+    public Chessboard(Pane checkerboard){
+        this.checkerboard = checkerboard;
+        placePieces();
+    }
+
+    private void placePieces(){
+        for (int i = 0; i < 8; i++) {
+            pieces.add(new Pawn(1, i, false, checkerboard, pieces));
+            pieces.add(new Pawn(6, i, true, checkerboard, pieces));
+        }
+    }
+
+    public static ChessPiece getPieceAt(int row, int column){
         for (ChessPiece piece : pieces) {
             if(piece.getRow() == row && piece.getColumn() == column) return piece;
         }

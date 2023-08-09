@@ -16,7 +16,7 @@ public class Client extends Application {
         stage.setResizable(false);
         stage.getIcons().add(new Image(Objects.requireNonNull(Client.class.getResourceAsStream("icon.png"))));
 
-        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/wiizz/jess/client/jessclient/fxml/main.fxml")));
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/wiizz/jess/client/jessclient/fxml/game.fxml")));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
