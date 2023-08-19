@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="poprawa systemu ładowania okien, oraz dodanie początków szachów">
+    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Ukończenie pionka">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" afterDir="false" />
@@ -27,12 +31,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "WIIZZPL"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;WIIZZPL&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -122,7 +126,17 @@
       <workItem from="1691407561176" duration="1390000" />
       <workItem from="1691449520872" duration="12000" />
       <workItem from="1691492528544" duration="7166000" />
-      <workItem from="1691576708730" duration="14546000" />
+      <workItem from="1691576708730" duration="15403000" />
+      <workItem from="1691669553793" duration="4129000" />
+      <workItem from="1691920108973" duration="4541000" />
+      <workItem from="1691948062669" duration="599000" />
+      <workItem from="1692010251252" duration="7648000" />
+      <workItem from="1692092799483" duration="627000" />
+      <workItem from="1692179921997" duration="7082000" />
+      <workItem from="1692272013463" duration="1072000" />
+      <workItem from="1692293622302" duration="1202000" />
+      <workItem from="1692354372079" duration="3225000" />
+      <workItem from="1692445885424" duration="9169000" />
     </task>
     <task id="LOCAL-00001" summary="Dodatkowe okna plus poprawa main.fxml">
       <option name="closed" value="true" />
@@ -140,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691578438937</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ukończenie pionka">
+      <option name="closed" value="true" />
+      <created>1691596708358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691596708358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +173,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Dodatkowe okna plus poprawa main.fxml" />
     <MESSAGE value="poprawa systemu ładowania okien, oraz dodanie początków szachów" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawa systemu ładowania okien, oraz dodanie początków szachów" />
+    <MESSAGE value="Ukończenie pionka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ukończenie pionka" />
   </component>
 </project>

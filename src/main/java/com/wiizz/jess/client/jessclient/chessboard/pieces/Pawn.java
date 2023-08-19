@@ -18,17 +18,20 @@ public class Pawn extends ChessPiece{
     protected void move(int row, int column) {
         hasMoved = true;
         hasDoubleMoved = abs(this.row-row) == 2;
-        System.out.println("I'm double moved now: "+hasDoubleMoved);
         if (abs(column-this.column) == 1 && row-this.row == ((isWhite)?-1:1)){
             ChessPiece enPessantPiece = Chessboard.getPieceAt(this.row, column);
             if (enPessantPiece != null && enPessantPiece.isWhite != isWhite) enPessantPiece.kill();
         }
         super.move(row, column);
-        //TODO Pawn promotion
+        if (row == 0 && isWhite || row == 7 && !isWhite){
+            pieces.add(new Queen(row, column, isWhite, checkerboard, pieces));
+            this.kill();
+        }
     }
     @Override
     boolean isMoveValid(int deltaRow, int deltaColumn) {
         if (!super.isMoveValid(deltaRow, deltaColumn)) return false;
+
         //forwards
         if(deltaColumn == 0){
             //one forward

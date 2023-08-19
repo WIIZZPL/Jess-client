@@ -35,7 +35,6 @@ public abstract class ChessPiece {
         makeDraggable(sprite);
 
         this.pieces = pieces;
-        pieces.add(this);
     }
 
     private int startingRow;
@@ -45,12 +44,13 @@ public abstract class ChessPiece {
             startingRow = row;
             startingColumn = column;
             sprite.toFront();
+            e.consume();
         });
 
         node.setOnMouseDragged(e -> {
             int targetRow = (int)(e.getY()/tileSize);
             int targetColumn = (int)(e.getX()/tileSize);
-            if (isMoveValid(targetRow-row, targetColumn-column)) {
+            if ((Chessboard.isWhiteMove()==isWhite && isMoveValid(targetRow-row, targetColumn-column)) || (targetRow == startingRow && targetColumn == startingColumn)) {
                 moveSprite(targetRow, targetColumn);
             }
             e.consume();
@@ -59,7 +59,7 @@ public abstract class ChessPiece {
         node.setOnMouseReleased(e -> {
             int targetRow = (int)(e.getY()/tileSize);
             int targetColumn = (int)(e.getX()/tileSize);
-            if (isMoveValid(targetRow-row, targetColumn-column))
+            if (Chessboard.isWhiteMove()==isWhite && isMoveValid(targetRow-row, targetColumn-column))
                 move(targetRow, targetColumn);
             else moveSprite(startingRow, startingColumn);
             e.consume();
@@ -89,7 +89,6 @@ public abstract class ChessPiece {
     }
 
     boolean isMoveValid(int deltaRow, int deltaColumn){
-        if(isWhite != Chessboard.isWhiteMove()) return false;
         return row+deltaRow >= 0 && row+deltaRow < 8 && column+deltaColumn >= 0 && column+deltaColumn < 8;
     }
 
