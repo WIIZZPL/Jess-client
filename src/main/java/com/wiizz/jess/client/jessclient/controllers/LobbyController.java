@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.Socket;
 import java.util.Objects;
 
 public class LobbyController {
@@ -21,8 +22,14 @@ public class LobbyController {
     public PasswordField passwordInput;
     public Button joinButton;
 
+    private Socket clientSocket;
+
     public void initialize(){
 
+    }
+
+    public void setClientSocket(Socket clientSocket){
+        this.clientSocket = clientSocket;
     }
 
     public void createTable(ActionEvent actionEvent) throws IOException {

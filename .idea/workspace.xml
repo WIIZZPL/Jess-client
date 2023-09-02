@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Ukończenie pionka">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Bishop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/King.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Knight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Queen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Rook.java" afterDir="false" />
+    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Ukończenie wszystkich figur">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/BroadcastListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/ServerModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wiizz/jess/client/jessclient/fxml/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +42,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2RjzHlc7KHCvgCRv05aHDrgJHZn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -136,7 +136,17 @@
       <workItem from="1692272013463" duration="1072000" />
       <workItem from="1692293622302" duration="1202000" />
       <workItem from="1692354372079" duration="3225000" />
-      <workItem from="1692445885424" duration="9169000" />
+      <workItem from="1692445885424" duration="9424000" />
+      <workItem from="1692613534600" duration="654000" />
+      <workItem from="1692782528659" duration="311000" />
+      <workItem from="1692881455127" duration="1527000" />
+      <workItem from="1692992920497" duration="4000" />
+      <workItem from="1693324374882" duration="39000" />
+      <workItem from="1693398963290" duration="2609000" />
+      <workItem from="1693483757862" duration="6228000" />
+      <workItem from="1693499230524" duration="2141000" />
+      <workItem from="1693562027024" duration="1106000" />
+      <workItem from="1693583011113" duration="1786000" />
     </task>
     <task id="LOCAL-00001" summary="Dodatkowe okna plus poprawa main.fxml">
       <option name="closed" value="true" />
@@ -162,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691596708358</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ukończenie wszystkich figur">
+      <option name="closed" value="true" />
+      <created>1692472940912</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692472940912</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +192,7 @@
     <MESSAGE value="Dodatkowe okna plus poprawa main.fxml" />
     <MESSAGE value="poprawa systemu ładowania okien, oraz dodanie początków szachów" />
     <MESSAGE value="Ukończenie pionka" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ukończenie pionka" />
+    <MESSAGE value="Ukończenie wszystkich figur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ukończenie wszystkich figur" />
   </component>
 </project>

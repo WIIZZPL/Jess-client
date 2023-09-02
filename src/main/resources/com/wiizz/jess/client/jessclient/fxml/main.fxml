@@ -10,10 +10,10 @@
     </padding>
    <BorderPane>
       <left>
-           <TextField fx:id="usernameInput" prefWidth="158.0" promptText="Username" BorderPane.alignment="CENTER" />
+           <TextField fx:id="usernameInput" prefWidth="177.0" promptText="Username" BorderPane.alignment="CENTER" />
       </left>
       <right>
-           <Button fx:id="connectButton" mnemonicParsing="false" onAction="#connectAction" prefHeight="25.0" prefWidth="67.0" text="Connect" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+           <Button fx:id="connectButton" mnemonicParsing="false" onAction="#connectAction" prefHeight="25.0" prefWidth="60.0" text="Connect" textAlignment="CENTER" BorderPane.alignment="CENTER" />
       </right>
    </BorderPane>
     <HBox alignment="CENTER" spacing="10.0">
@@ -22,23 +22,23 @@
                 <Insets />
             </HBox.margin>
         </Label>
-        <TextField fx:id="ipAddressInput" prefHeight="27.0" prefWidth="102.0" promptText="IP address" />
+        <TextField fx:id="ipAddressInput" prefHeight="27.0" prefWidth="120.0" promptText="IP address" />
         <Label text=":">
             <HBox.margin>
                 <Insets />
             </HBox.margin>
         </Label>
-        <TextField fx:id="portInput" prefHeight="27.0" prefWidth="67.0" promptText="Port">
+        <TextField fx:id="portInput" prefHeight="27.0" prefWidth="60.0" promptText="Port">
             <HBox.margin>
                 <Insets />
             </HBox.margin>
         </TextField>
     </HBox>
-    <TableView fx:id="serverTable" prefHeight="200.0">
+    <TableView fx:id="serverTable" prefHeight="200.0" prefWidth="260.0">
       <columns>
-          <TableColumn prefWidth="75.0" text="Server" />
-          <TableColumn prefWidth="75.0" text="Space" />
-          <TableColumn prefWidth="75.0" text="Ping" />
+          <TableColumn fx:id="serverTableNameColumn" prefWidth="100.0" text="Server Name" />
+          <TableColumn fx:id="serverTableIPColumn" minWidth="0.0" prefWidth="100.0" text="IP" />
+          <TableColumn fx:id="serverTablePortColumn" maxWidth="98.0" prefWidth="60.0" text="Port" />
       </columns>
     </TableView>
 </VBox>
