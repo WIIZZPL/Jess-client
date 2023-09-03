@@ -4,11 +4,13 @@ public class ServerModel {
     private String name;
     private String IP;
     private int port;
+    private boolean hasPass;
 
-    public ServerModel(String name, String IP, int port){
+    public ServerModel(String name, String IP, int port, boolean hasPass){
         this.name = name;
         this.IP = IP;
         this.port = port;
+        this.hasPass = hasPass;
     }
 
     public String getName() {
@@ -33,5 +35,13 @@ public class ServerModel {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public boolean hasPass() {
+        return hasPass;
+    }
+
+    public void setHasPass(boolean hasPass) {
+        this.hasPass = hasPass;
     }
 }

@@ -31,6 +31,7 @@ public class MainController {
     private ServerModel selectedServer;
 
     public void initialize(){
+
         serverTableNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         serverTableIPColumn.setCellValueFactory(new PropertyValueFactory<>("IP"));
         serverTablePortColumn.setCellValueFactory(new PropertyValueFactory<>("port"));
@@ -76,6 +77,35 @@ public class MainController {
             return;
         }
 
+        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+
+        String pass = "a";
+
+        if (selectedServer.hasPass()) {
+            do {
+                TextInputDialog passInputDialog = new TextInputDialog();
+                passInputDialog.setTitle("Password needed");
+                passInputDialog.setHeaderText("Server is password protected");
+                passInputDialog.setContentText("Password:");
+                passInputDialog.showAndWait();
+                pass = passInputDialog.getEditor().getText();
+            } while (pass.isEmpty());
+        }
+
+        out.write(usernameInput.getText()+";"+pass+"\n");
+        out.flush();
+
+        String serverResponse = in.readLine();
+
+        if (!Objects.equals(serverResponse, "OK")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Connection refused");
+            alert.setContentText("Reason: "+serverResponse);
+            alert.showAndWait();
+            return;
+        }
+
         broadcastListener.interrupt();
         Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         Stage newStage = new Stage();
@@ -102,8 +132,8 @@ public class MainController {
         return false;
     }
 
-    public void addServerToTable(String name, String IP, String port) {
-        serverTable.getItems().add(new ServerModel(name, IP, Integer.parseInt(port)));
+    public void addServerToTable(String name, String IP, String port, String noPass) {
+        serverTable.getItems().add(new ServerModel(name, IP, Integer.parseInt(port), Boolean.parseBoolean(noPass)));
     }
 
 }

@@ -47,7 +47,7 @@ public class BroadcastListener extends Thread{
 
             if (controller.isServerInTable(strings[1])) continue;
 
-            controller.addServerToTable(strings[3], strings[1], strings[2]);
+            controller.addServerToTable(strings[3], strings[1], strings[2], strings[4]);
 
         }
 
