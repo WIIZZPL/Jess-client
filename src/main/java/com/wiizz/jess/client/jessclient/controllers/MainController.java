@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import java.io.IOException;
+import javafx.stage.Window;
+
+import java.io.*;
 import java.net.ConnectException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -26,6 +28,7 @@ public class MainController {
     public TextField ipAddressInput;
 
     private BroadcastListener broadcastListener;
+    private ServerModel selectedServer;
 
     public void initialize(){
         serverTableNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -34,14 +37,18 @@ public class MainController {
 
         serverTable.getSelectionModel().selectedItemProperty().addListener((observableValue, serverModel, t1) -> {
             if (serverTable.getSelectionModel().getSelectedItem() != null){
-                ServerModel item = serverTable.getSelectionModel().getSelectedItem();
-                ipAddressInput.setText(item.getIP());
-                portInput.setText(String.valueOf(item.getPort()));
+                selectedServer = serverTable.getSelectionModel().getSelectedItem();
+                ipAddressInput.setText(selectedServer.getIP());
+                portInput.setText(String.valueOf(selectedServer.getPort()));
             }
         });
 
         broadcastListener = new BroadcastListener(this);
         broadcastListener.start();
+    }
+
+    public void setUpStageListeners() {
+        Window stage = connectButton.getScene().getWindow();
     }
 
     public void connectAction(ActionEvent actionEvent) throws IOException {
@@ -69,7 +76,6 @@ public class MainController {
             return;
         }
 
-
         broadcastListener.interrupt();
         Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         Stage newStage = new Stage();
@@ -82,6 +88,7 @@ public class MainController {
 
         LobbyController controller = loader.getController();
         controller.setClientSocket(clientSocket);
+        controller.setServerName(selectedServer.getName());
 
         newStage.setScene(scene);
         newStage.show();
@@ -98,4 +105,5 @@ public class MainController {
     public void addServerToTable(String name, String IP, String port) {
         serverTable.getItems().add(new ServerModel(name, IP, Integer.parseInt(port)));
     }
+
 }

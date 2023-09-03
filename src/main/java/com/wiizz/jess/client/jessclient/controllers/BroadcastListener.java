@@ -15,6 +15,7 @@ public class BroadcastListener extends Thread{
 
     public BroadcastListener(MainController controller) {
         this.controller = controller;
+        this.setDaemon(true);
 
         try {
             this.socket = new DatagramSocket(55555);
@@ -31,7 +32,10 @@ public class BroadcastListener extends Thread{
 
             try {
                 socket.receive(packet);
-            } catch (IOException e) {
+            } catch (SocketException e) {
+                break;
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
 
@@ -46,5 +50,7 @@ public class BroadcastListener extends Thread{
             controller.addServerToTable(strings[3], strings[1], strings[2]);
 
         }
+
     }
+
 }

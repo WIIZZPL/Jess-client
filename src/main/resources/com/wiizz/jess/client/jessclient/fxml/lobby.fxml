@@ -19,9 +19,9 @@
     <Separator prefWidth="200.0" />
     <TableView fx:id="gamesTable" prefHeight="200.0" prefWidth="300.0">
       <columns>
-          <TableColumn prefWidth="150.0" text="User" />
-          <TableColumn prefWidth="75.0" text="Time" />
-          <TableColumn prefWidth="75.0" text="Password" />
+          <TableColumn fx:id="gamesTableUserColumn" prefWidth="150.0" text="User" />
+          <TableColumn fx:id="gamesTableTimeColumn" prefWidth="75.0" text="Time" />
+          <TableColumn fx:id="gamesTablePasswordColumn" prefWidth="75.0" text="Password" />
       </columns>
     </TableView>
     <HBox alignment="CENTER_LEFT" spacing="10.0">

@@ -1,5 +1,6 @@
 package com.wiizz.jess.client.jessclient;
 
+import com.wiizz.jess.client.jessclient.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,8 +17,10 @@ public class Client extends Application {
         stage.setResizable(false);
         stage.getIcons().add(new Image(Objects.requireNonNull(Client.class.getResourceAsStream("icon.png"))));
 
-        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/wiizz/jess/client/jessclient/fxml/game.fxml")));
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/wiizz/jess/client/jessclient/fxml/main.fxml")));
         Parent root = loader.load();
+
+        MainController controller = loader.getController();
 
         Scene scene = new Scene(root);
 
@@ -25,6 +28,8 @@ public class Client extends Application {
         scene.getStylesheets().add(css);
 
         stage.setScene(scene);
+        controller.setUpStageListeners();
+
         stage.show();
     }
 
