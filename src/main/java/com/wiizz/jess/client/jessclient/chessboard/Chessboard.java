@@ -31,30 +31,41 @@ public class Chessboard {
         Chessboard.out = out;
         Chessboard.isPlayerWhite = isPlayerWhite;
         Chessboard.isPlayerMove = isPlayerWhite;
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Waiting for a player to join");
+        try {
+            while (!in.ready()) alert.show();
+            alert.show();
+            in.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         placePieces();
     }
 
     private void placePieces(){
         for (int i = 0; i < 8; i++) {
-            pieces.add(new Pawn(1, i, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-            pieces.add(new Pawn(6, i, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+            pieces.add(new Pawn(1, i, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+            pieces.add(new Pawn(6, i, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
         }
-        pieces.add(new Queen(0, 3, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Queen(7, 3, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Bishop(0, 2, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Bishop(7, 2, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Bishop(0, 5, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Bishop(7, 5, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Rook(0, 0, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Rook(7, 0, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Rook(0, 7, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Rook(7, 7, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Knight(0, 1, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Knight(7, 1, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Knight(0, 6, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new Knight(7, 6, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
-        pieces.add(new King(0, 4, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
-        pieces.add(new King(7, 4, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Queen(0, 3, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Queen(7, 3, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Bishop(0, 2, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Bishop(7, 2, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Bishop(0, 5, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Bishop(7, 5, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Rook(0, 0, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Rook(7, 0, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Rook(0, 7, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Rook(7, 7, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Knight(0, 1, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Knight(7, 1, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Knight(0, 6, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new Knight(7, 6, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
+        pieces.add(new King(0, 4, isPlayerWhite, !isPlayerWhite, checkerboard, pieces));
+        pieces.add(new King(7, 4, isPlayerWhite, isPlayerWhite, checkerboard, pieces));
     }
 
     public static ChessPiece getPieceAt(int row, int column){
