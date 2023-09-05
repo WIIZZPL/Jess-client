@@ -6,14 +6,27 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.io.*;
+import java.net.Socket;
+
 public class GameController {
 
     @FXML
     Pane checkerboard;
     Chessboard chessboard;
+    Socket clientSocket;
     public void initialize(){
         drawCheckerboard();
-        chessboard = new Chessboard(checkerboard);
+    }
+
+    public void setController(Socket clientSocket, boolean isPlayerWhite) {
+        this.clientSocket = clientSocket;
+        try {
+            chessboard = new Chessboard(checkerboard, new BufferedReader(new InputStreamReader(clientSocket.getInputStream())), new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())), isPlayerWhite);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     private void drawCheckerboard(){

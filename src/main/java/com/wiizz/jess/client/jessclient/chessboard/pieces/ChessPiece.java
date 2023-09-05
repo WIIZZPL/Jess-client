@@ -11,15 +11,17 @@ import java.util.Objects;
 public abstract class ChessPiece {
     int row;
     int column;
+    boolean isClientPlayer;
     boolean isWhite;
     double tileSize;
     ImageView sprite;
     LinkedList<ChessPiece> pieces;
     Pane checkerboard;
 
-    public ChessPiece(int row, int column, boolean isWhite, String pieceName, Pane checkerBoard, LinkedList<ChessPiece> pieces){
+    public ChessPiece(int row, int column, boolean isClientPlayer, boolean isWhite, String pieceName, Pane checkerBoard, LinkedList<ChessPiece> pieces){
         this.row = row;
         this.column = column;
+        this.isClientPlayer = isClientPlayer;
         this.isWhite = isWhite;
         this.checkerboard = checkerBoard;
 
@@ -32,7 +34,7 @@ public abstract class ChessPiece {
         moveSprite(row, column);
         checkerBoard.getChildren().add(sprite);
 
-        makeDraggable(sprite);
+        if(isClientPlayer) makeDraggable(sprite);
 
         this.pieces = pieces;
     }
@@ -50,7 +52,7 @@ public abstract class ChessPiece {
         node.setOnMouseDragged(e -> {
             int targetRow = (int)(e.getY()/tileSize);
             int targetColumn = (int)(e.getX()/tileSize);
-            if ((Chessboard.isWhiteMove()==isWhite && isMoveValid(targetRow-row, targetColumn-column)) || (targetRow == startingRow && targetColumn == startingColumn)) {
+            if ((Chessboard.isWhiteMove()== isClientPlayer && isMoveValid(targetRow-row, targetColumn-column)) || (targetRow == startingRow && targetColumn == startingColumn)) {
                 moveSprite(targetRow, targetColumn);
             }
             e.consume();
@@ -59,7 +61,7 @@ public abstract class ChessPiece {
         node.setOnMouseReleased(e -> {
             int targetRow = (int)(e.getY()/tileSize);
             int targetColumn = (int)(e.getX()/tileSize);
-            if (Chessboard.isWhiteMove()==isWhite && isMoveValid(targetRow-row, targetColumn-column))
+            if (Chessboard.isWhiteMove()== isClientPlayer && isMoveValid(targetRow-row, targetColumn-column))
                 move(targetRow, targetColumn);
             else moveSprite(startingRow, startingColumn);
             e.consume();
@@ -71,7 +73,7 @@ public abstract class ChessPiece {
         sprite.setY(tileSize*row);
     }
 
-    protected void move(int row, int column){
+    public void move(int row, int column){
         ChessPiece piece = Chessboard.getPieceAt(row, column);
         if(piece == this) return;
         if(piece != null) {
@@ -80,6 +82,8 @@ public abstract class ChessPiece {
         this.row = row;
         this.column = column;
         moveSprite(row, column);
+        Chessboard.sendMove(startingRow, startingColumn, row, column);
+        Chessboard.getMove();
         Chessboard.moveToggle();
     }
 

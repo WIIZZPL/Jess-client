@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Ukończenie wszystkich figur">
+    <list default="true" id="1d4ed1a0-d8c3-48e0-bcef-e55575ae72a8" name="Changes" comment="Hasło i odpowiedzi serwera przy łączeniu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/BroadcastListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/BroadcastListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/Chessboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/chessboard/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/LobbyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/ServerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/ServerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +156,9 @@
       <workItem from="1693583011113" duration="1786000" />
       <workItem from="1693652934522" duration="3901000" />
       <workItem from="1693663251560" duration="5291000" />
-      <workItem from="1693732824884" duration="11169000" />
+      <workItem from="1693732824884" duration="12621000" />
+      <workItem from="1693822515167" duration="11631000" />
+      <workItem from="1693890284564" duration="1717000" />
     </task>
     <task id="LOCAL-00001" summary="Dodatkowe okna plus poprawa main.fxml">
       <option name="closed" value="true" />
@@ -197,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693764133467</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Hasło i odpowiedzi serwera przy łączeniu">
+      <option name="closed" value="true" />
+      <created>1693775492491</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693775492491</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,17 +229,7 @@
     <MESSAGE value="poprawa systemu ładowania okien, oraz dodanie początków szachów" />
     <MESSAGE value="Ukończenie pionka" />
     <MESSAGE value="Ukończenie wszystkich figur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ukończenie wszystkich figur" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/wiizz/jess/client/jessclient/controllers/MainController.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Hasło i odpowiedzi serwera przy łączeniu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hasło i odpowiedzi serwera przy łączeniu" />
   </component>
 </project>

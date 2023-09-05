@@ -29,6 +29,8 @@ public class LobbyController {
     private BufferedWriter out;
 
     private GameModel selectedGame;
+    private String username;
+    private String password;
 
     public void initialize(){
         gamesTableUserColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
@@ -68,7 +70,7 @@ public class LobbyController {
         String[] games = received.split(";");
         for (String game: games) {
             String[] args = game.split(",");
-            gamesTable.getItems().add(new GameModel(args[0], args[1], Boolean.getBoolean(args[2])));
+            gamesTable.getItems().add(new GameModel(args[0], args[1], Boolean.parseBoolean(args[2])));
         }
     }
 
@@ -76,11 +78,52 @@ public class LobbyController {
         this.serverName.setText(serverName);
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void createTable(ActionEvent actionEvent) throws IOException {
+        TextInputDialog textInputDialog = new TextInputDialog();
+        textInputDialog.setTitle("New game creation");
+        textInputDialog.setHeaderText("Password?");
+        textInputDialog.setContentText("Insert password for the game (leave empty if none):");
+        textInputDialog.showAndWait();
+
+        String password = textInputDialog.getEditor().getText();
+        passwordInput.setText(password);
+
+        selectedGame = new GameModel(username, "30:00", !password.isEmpty());
+
+        out.write("GAME_CREA;"+selectedGame.serialized()+";"+password+"\n");
+        out.flush();
+
+        String response = in.readLine();
+
+        if (!response.equals("OK")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Game creation refused");
+            alert.setContentText("Reason: "+response);
+            alert.showAndWait();
+            return;
+        }
+
         joinTable(actionEvent);
     }
 
     public void joinTable(ActionEvent actionEvent) throws IOException {
+        out.write("GAME_JOIN;"+selectedGame.serialized()+";"+passwordInput.getText()+"\n");
+        out.flush();
+
+        String response = in.readLine();
+
+        if (!response.equals("OK")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Game joining refused");
+            alert.setContentText("Reason: "+response);
+            alert.showAndWait();
+            return;
+        }
+
         Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         Stage newStage = new Stage();
         newStage.setTitle(stage.getTitle());
@@ -89,6 +132,9 @@ public class LobbyController {
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/wiizz/jess/client/jessclient/fxml/game.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);
+
+        GameController controller = loader.getController();
+        controller.setController(clientSocket, selectedGame.getUser().equals(username));
 
         newStage.setScene(scene);
         newStage.show();

@@ -10,12 +10,12 @@ import static java.lang.Math.abs;
 public class King extends ChessPiece{
 
     boolean hasMoved = false;
-    public King(int row, int column, boolean isWhite, Pane checkerBoard, LinkedList<ChessPiece> pieces) {
-        super(row, column, isWhite, "king", checkerBoard, pieces);
+    public King(int row, int column, boolean isPlayer,  boolean isWhite, Pane checkerBoard, LinkedList<ChessPiece> pieces) {
+        super(row, column, isPlayer, isWhite, "king", checkerBoard, pieces);
     }
 
     @Override
-    protected void move(int row, int column) {
+    public void move(int row, int column) {
         hasMoved = true;
         if(abs(column-this.column) == 2){
             ChessPiece rook = Chessboard.getPieceAt(this.row, (column==2)?0:7);
@@ -33,7 +33,7 @@ public class King extends ChessPiece{
         //Standard move
         if (abs(deltaRow) <= 1 && abs(deltaColumn) <= 1) {
             ChessPiece piece = Chessboard.getPieceAt(this.row + deltaRow, this.column + deltaColumn);
-            if (piece != null && this.isWhite == piece.isWhite) return false;
+            if (piece != null && this.isClientPlayer == piece.isClientPlayer) return false;
 
             int oldRow = this.row, oldColumn = this.column;
             this.row = this.row+deltaRow;
@@ -64,7 +64,7 @@ public class King extends ChessPiece{
 
     boolean isSpaceAttacked(int row, int column){
         for(ChessPiece piece : pieces){
-            if (piece.isWhite != this.isWhite){
+            if (piece.isClientPlayer != this.isClientPlayer){
                 if (piece.isMoveValid(row-piece.row, column-piece.column)){
                     return true;
                 }

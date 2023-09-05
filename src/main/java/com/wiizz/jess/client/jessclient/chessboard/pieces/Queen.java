@@ -8,8 +8,8 @@ import java.util.LinkedList;
 import static java.lang.Math.abs;
 
 public class Queen extends ChessPiece{
-    public Queen(int row, int column, boolean isWhite, Pane checkerBoard, LinkedList<ChessPiece> pieces) {
-        super(row, column, isWhite, "queen", checkerBoard, pieces);
+    public Queen(int row, int column, boolean isPlayer,  boolean isWhite, Pane checkerBoard, LinkedList<ChessPiece> pieces) {
+        super(row, column, isPlayer, isWhite, "queen", checkerBoard, pieces);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Queen extends ChessPiece{
 
         //Can move/attack
         ChessPiece piece = Chessboard.getPieceAt(row+deltaRow, column+deltaColumn);
-        if(piece != null && piece.isWhite==isWhite) return false;
+        if(piece != null && piece.isClientPlayer == isClientPlayer) return false;
 
         //Is blocked+movement check
         if (abs(deltaColumn) == abs(deltaRow)){

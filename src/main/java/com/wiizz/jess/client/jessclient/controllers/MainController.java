@@ -119,6 +119,7 @@ public class MainController {
         LobbyController controller = loader.getController();
         controller.setClientSocket(clientSocket);
         controller.setServerName(selectedServer.getName());
+        controller.setUsername(usernameInput.getText());
 
         newStage.setScene(scene);
         newStage.show();

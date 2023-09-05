@@ -34,4 +34,8 @@ public class GameModel {
     public void setPassword(boolean password) {
         this.password = password;
     }
+
+    public String serialized(){
+        return user+";"+time+";"+password;
+    }
 }
